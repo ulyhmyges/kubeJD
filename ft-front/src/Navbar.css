@@ -1,0 +1,129 @@
+@keyframes gradient-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.navbar {
+  background-color: #FFF;
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  z-index: 1000;
+
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.logo{
+  width: 20%;
+}
+
+.navbar-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.brand {
+  margin-right: 20px;
+  font-family: Inter;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #002B4E;
+  font-style: normal;
+}
+
+.nav-item {
+  margin-right: 20px;
+  font-size: 0.7em;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  color: #000;
+  transition: background-position 0.5s ease-in-out;
+
+  background-image: linear-gradient(70deg, #301847 40%, #C10214 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background-position: 0 0;
+}
+
+.nav-item:hover::before {
+  z-index: 0;
+}
+
+
+.search-icn:hover {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-icon {
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: none;
+  width: 250px;
+  outline: none;
+}
+.login-button button {
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background-image: linear-gradient(70deg, #301847 40%, #C10214 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease-in-out;
+
+}
+
+.login-button button:hover {
+  background-position: 0 0;
+}

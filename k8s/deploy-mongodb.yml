@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-mongodb
+  labels:
+    db: mongodb
+  namespace: ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      db: mongodb
+  template:
+    metadata:
+      labels:
+        db: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "esgi"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "esgi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-nodeport
+  labels:
+    db: mongo-service
+  namespace: ns
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      targetPort: 27017
+      nodePort: 30800
+  selector:
+    db: mongodb

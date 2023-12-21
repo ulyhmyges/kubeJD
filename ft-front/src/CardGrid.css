@@ -1,0 +1,64 @@
+/* CardGrid.css */
+.card-grid-container {
+    margin: 20px;
+    background-color: #FFFFFF;
+    max-width: 1400px;
+
+}
+
+.card-grid-container h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* Adjust the color as needed */
+}
+
+.card-grid {
+    display: flex;
+    justify-content: flex-start; /* Align to the start of the container */
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.card {
+    width: calc(33.333% - 20px); /* Three cards per line minus the gap */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    background: #fff; /* Fallback for browsers that do not support gradients */
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9); /* Subtle gradient background */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Scale the image up on hover */
+}
+
+.card-info {
+    padding: 15px;
+    text-align: left; /* Align text to the left */
+}
+
+.card-info h3 {
+    margin-top: 0;
+    color: #333; /* Adjust the color as needed */
+    font-size: 1.1em; /* Slightly larger font size for titles */
+}
+
+.card-info p {
+    color: #666; /* Adjust the color as needed */
+    font-size: 0.9em; /* Slightly smaller font size for descriptions */
+    margin-top: 5px; /* Spacing between title and description */
+}
+

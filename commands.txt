@@ -1,0 +1,6 @@
+# contrôle continu, 21/12/2023, intervenant: JD
+docker build -t ulyhmyges/ft-front ./ft-front
+
+kubectl apply -Rf k8s/
+kubectl delete -Rf k8s/
+

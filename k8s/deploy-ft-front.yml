@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ns
+  labels:
+    name: ns
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-ft-front
+  labels:
+    app: ft-front
+  namespace: ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ft-front
+  template:
+    metadata:
+      labels:
+        app: ft-front
+    spec:
+      containers:
+        - name: client-ci
+          image: ulyhmyges/ft-front
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc
+  labels:
+    app: ft-front-service
+  namespace: ns
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30300
+  selector:
+    app: ft-front
+
