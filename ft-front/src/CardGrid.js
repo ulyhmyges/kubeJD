@@ -5,9 +5,9 @@ const placeholderCards = [
     { id: 1, title: 'Event 1', description: 'This is a description for Event 1.', imageUrl: `${process.env.PUBLIC_URL}/event1.png` },
     { id: 2, title: 'Event 2', description: 'This is a description for Event 2.', imageUrl: `${process.env.PUBLIC_URL}/event2.png` },
     { id: 3, title: 'Event 3', description: 'This is a description for Event 3.', imageUrl: `${process.env.PUBLIC_URL}/event3.png` },
+   // add comment
     // ... add more placeholders as needed
 ];
-
 
 const CardGrid = () => {
     return (

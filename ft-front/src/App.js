@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './Navbar';
 import CardGrid from "./CardGrid";
 
+
+
 function App() {
     return (
         <div className="App">
@@ -11,7 +13,6 @@ function App() {
                 <Navbar />
                 <CardGrid />
             </header>
-
         </div>
     );
 }
